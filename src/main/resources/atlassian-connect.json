@@ -1,0 +1,30 @@
+{
+  "key": "ua.cross.kurin.jira-flash-notes",
+  "baseUrl": "https://jira-flash-notes.onrender.com",
+  "name": "Jira Flash Summary & PDF Generator",
+  "description": "PDF",
+  "vendor": {
+    "name": "Cross Kurin",
+    "url": "https://example.com"
+  },
+  "authentication": {
+    "type": "jwt"
+  },
+  "lifecycle": {
+    "installed": "/installed",
+    "uninstalled": "/uninstalled"
+  },
+  "modules": {
+    "generalPages": [
+      {
+        "key": "flash-notes-page",
+        "location": "system.top.navigation.bar.apps",
+        "name": {
+          "value": "Flash Notes PDF"
+        },
+        "url": "/first-deploy-message"
+      }
+    ]
+  },
+  "scopes": ["READ"]
+}
