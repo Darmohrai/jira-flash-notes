@@ -54,6 +54,12 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>com.github.librepdf</groupId>
+            <artifactId>openpdf</artifactId>
+            <version>3.0.0</version>
+            <scope>compile</scope>
+        </dependency>
 
 <!--        TEST-->
         <dependency>

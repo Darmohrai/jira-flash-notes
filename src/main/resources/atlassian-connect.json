@@ -2,11 +2,6 @@
   "key": "ua.cross.kurin.jira-flash-notes",
   "baseUrl": "https://jira-flash-notes.onrender.com",
   "name": "Jira Flash Summary & PDF Generator",
-  "description": "PDF",
-  "vendor": {
-    "name": "Cross Kurin",
-    "url": "https://example.com"
-  },
   "authentication": {
     "type": "jwt"
   },
@@ -14,6 +9,9 @@
     "installed": "/installed",
     "uninstalled": "/uninstalled"
   },
+  "scopes": [
+    "READ"
+  ],
   "modules": {
     "generalPages": [
       {
@@ -24,7 +22,18 @@
         },
         "url": "/first-deploy-message"
       }
+    ],
+    "webItems": [
+      {
+        "key": "export-pdf-button",
+        "location": "operations-operations",
+        "weight": 100,
+        "name": {
+          "value": "Export to PDF (Flash)"
+        },
+        "url": "/download-pdf?issueKey={issue.key}",
+        "context": "addon"
+      }
     ]
-  },
-  "scopes": ["READ"]
+  }
 }
