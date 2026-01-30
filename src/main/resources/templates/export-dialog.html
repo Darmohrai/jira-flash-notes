@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://connect-cdn.atl-paas.net/all.js"></script>
+    <link rel="stylesheet" href="https://aui-cdn.atlassian.com/aui-adg/6.0.0/css/aui.min.css" media="all">
+    <style>
+        body { background: white; padding: 15px; font-family: sans-serif; }
+        .options-group { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+<div class="aui-group">
+    <form class="aui">
+        <h3>Export Settings</h3>
+        <p>Exporting issue: <strong th:text="${issueKey}"></strong></p>
+
+        <div class="options-group">
+            <div class="radio">
+                <input class="radio" type="radio" name="exportScope" id="single" value="single" checked>
+                <label for="single">Current task only</label>
+            </div>
+            <div class="radio">
+                <input class="radio" type="radio" name="exportScope" id="category" value="category">
+                <label for="category">Tasks in the same status</label>
+            </div>
+            <div class="radio">
+                <input class="radio" type="radio" name="exportScope" id="all" value="all">
+                <label for="all">All project tasks</label>
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <button class="aui-button aui-button-primary" id="submit-btn">Generate PDF</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('submit-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const scope = document.querySelector('input[name="exportScope"]:checked').value;
+        window.location.href = `/download-pdf?issueKey=[[${issueKey}]]&scope=` + scope;
+    });
+</script>
+</body>
+</html>

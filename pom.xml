@@ -48,6 +48,14 @@
             <scope>compile</scope>
         </dependency>
 
+<!--        UI-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>4.1.0-M1</version>
+            <scope>compile</scope>
+        </dependency>
+
 <!--        OTHER-->
         <dependency>
             <groupId>org.projectlombok</groupId>

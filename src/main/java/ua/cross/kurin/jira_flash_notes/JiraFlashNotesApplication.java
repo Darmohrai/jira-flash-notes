@@ -63,4 +63,9 @@ public class JiraFlashNotesApplication {
         return new ResponseEntity<>(pdfBytes, headers, HttpStatus.OK);
     }
 
+    @GetMapping("/export-config-dialog")
+    public String showDialog(@RequestParam String issueKey, org.springframework.ui.Model model) {
+        model.addAttribute("issueKey", issueKey);
+        return "export-dialog";
+    }
 }
