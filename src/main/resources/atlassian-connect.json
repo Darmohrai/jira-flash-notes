@@ -25,19 +25,25 @@
     ],
     "webItems": [
       {
-        "key": "export-pdf-advanced",
+        "key": "export-pdf-main-bar",
         "location": "view.issue.opsbar",
         "weight": 10,
-        "name": {
-          "value": "Export to PDF"
-        },
+        "name": { "value": "Export to PDF" },
         "target": {
           "type": "dialog",
-          "options": {
-            "width": "500px",
-            "height": "350px",
-            "header": { "value": "Export Settings" }
-          }
+          "options": { "width": "500px", "height": "350px", "header": { "value": "Export Settings" } }
+        },
+        "url": "/export-config-dialog?issueKey={issue.key}",
+        "context": "addon"
+      },
+      {
+        "key": "export-pdf-context-menu",
+        "location": "operations-operations",
+        "weight": 10,
+        "name": { "value": "Export to PDF (Flash)" },
+        "target": {
+          "type": "dialog",
+          "options": { "width": "500px", "height": "350px", "header": { "value": "Export Settings" } }
         },
         "url": "/export-config-dialog?issueKey={issue.key}",
         "context": "addon"
