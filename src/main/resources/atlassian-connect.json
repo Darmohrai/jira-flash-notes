@@ -26,19 +26,17 @@
     "webItems": [
       {
         "key": "export-pdf-advanced",
-        "location": "operations-operations",
-        "weight": 100,
+        "location": "view.issue.opsbar",
+        "weight": 10,
         "name": {
-          "value": "Export to PDF (Advanced)"
+          "value": "Export to PDF"
         },
         "target": {
           "type": "dialog",
           "options": {
             "width": "500px",
-            "height": "300px",
-            "header": {
-              "value": "Select PDF Export Options"
-            }
+            "height": "350px",
+            "header": { "value": "Export Settings" }
           }
         },
         "url": "/export-config-dialog?issueKey={issue.key}",
